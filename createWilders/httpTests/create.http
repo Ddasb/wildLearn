@@ -1,0 +1,14 @@
+# HTTP
+POST http://localhost:3000/api/wilder/create HTTP/1.1
+content-type: application/json
+
+{
+    "identity": {
+        "name": "Da Silva",
+        "firstName": "Tommy",
+        "age": 17
+    },
+    "skills": [
+        {"title": "Rien", "votes": 8}
+    ]
+}

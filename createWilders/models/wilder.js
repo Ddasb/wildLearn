@@ -6,7 +6,7 @@ const WilderSchema = new Schema({
     identity: {
         name: {type: String, unique: true},
         firstName: {type: String, unique: true},
-        age: {type: String, unique: true},
+        age: {type: String},
     },
     skills: [{
         title: String,
