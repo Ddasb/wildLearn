@@ -1,0 +1,48 @@
+### Requête Create
+# HTTP
+POST http://localhost:3000/api/wilders HTTP/1.1
+content-type: application/json
+
+{
+    "identity": {
+        "name": "Da Silva Bregieiro",
+        "firstName": "Damien",
+        "age": 18
+    },
+    "skills": [
+        {"title": "Rien", "votes": 8}
+    ]
+}
+
+### Requête Update
+# HTTP
+PATCH http://localhost:3000/api/wilders/5fa27f6d6e36c029382fa0e3 HTTP/1.1
+content-type: application/json
+
+{
+    "identity": {
+        "name": "Testas",
+        "firstName": "Lol",
+        "age": 19
+    },
+    "skills": [
+        {"title": "NodeJS", "votes": 5}
+    ]
+}
+
+### Requête Delete
+# HTTP
+DELETE http://localhost:3000/api/wilders/5fa1c9e12dd1513fccba20be HTTP/1.1
+
+### Requête GetAll
+# HTTP
+GET http://localhost:3000/api/wilders HTTP/1.1
+
+### Requête GetOne
+# HTTP
+GET http://localhost:3000/api/wilders/5fa27f6d6e36c029382fa0e3 HTTP/1.1
+content-type: application/json
+
+### Requête Erronée
+# HTTP
+GET http://localhost:3000/api/test HTTP/1.1
