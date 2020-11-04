@@ -25,17 +25,30 @@ module.exports = {
 
     update: (req, res) => {
         let datas = req.body;
-        let dataName = datas.name;
-        let dataFirstname = datas.firstName;
+        let dataName = datas.identity.name;
+        let dataFirstname = datas.identity.firstName;
         if (Object.keys(datas).length > 0) {
             WilderModel.find()
             .where('identity.firstName')
-            .equals(datas.firstName)
+            .equals(dataFirstname)
             .where('identity.name')
-            .equals(datas.name)
+            .equals(dataName)
             .exec()
             .then((result) => {
-                res.send(result);
+                let personID = result[0]._id;
+                console.log(personID);
+                return personID;
+            })
+            .then((personneID) => {
+                let filter = {
+                    "_id": personneID
+                }
+                let update = datas
+
+                return WilderModel.findOneAndUpdate(filter, update);
+            })
+            .then(() => {
+                res.send("Le wilder a bien été modifié.")
             })
             .catch((err) => {
                 res.json(err);
@@ -75,9 +88,6 @@ module.exports = {
                 firstName: dataFirstname
             }
         }
-        console.log(dataName);
-        console.log(dataFirstname);
-        console.log(delData);
         if (Object.keys(datas).length > 0) {
             WilderModel
             .deleteMany()

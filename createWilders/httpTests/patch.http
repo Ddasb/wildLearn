@@ -3,6 +3,12 @@ PATCH http://localhost:3000/api/wilder/update HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Da Silva",
-    "firstName": "Tommy"
+    "identity": {
+        "name": "Da Silva",
+        "firstName": "Tommy",
+        "age": 17
+    },
+    "skills": [
+        {"title": "Rien", "votes": 8}
+    ]
 }
