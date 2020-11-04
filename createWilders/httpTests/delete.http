@@ -1,3 +1,0 @@
-# HTTP
-DELETE http://localhost:3000/api/wilders/5fa1c9e12dd1513fccba20be HTTP/1.1
-content-type: application/json
