@@ -4,7 +4,8 @@ module.exports = {
     create: (req, res) => {
         let datas = req.body;
         if (Object.keys(datas).length > 0) {
-            WilderModel.init().then(() => {
+            WilderModel.init()
+            .then(() => {
                 const firstWilder = new WilderModel(datas);
                 return firstWilder;
             })
@@ -24,29 +25,12 @@ module.exports = {
     },
 
     update: (req, res) => {
+        let wilderID = req.params.wilderID;
         let datas = req.body;
-        let dataName = datas.identity.name;
-        let dataFirstname = datas.identity.firstName;
-        if (Object.keys(datas).length > 0) {
-            WilderModel.find()
-            .where('identity.firstName')
-            .equals(dataFirstname)
-            .where('identity.name')
-            .equals(dataName)
-            .exec()
-            .then((result) => {
-                let personID = result[0]._id;
-                console.log(personID);
-                return personID;
-            })
-            .then((personneID) => {
-                let filter = {
-                    "_id": personneID
-                }
-                let update = datas
+        if (wilderID && datas) {
+            let update = datas
 
-                return WilderModel.findOneAndUpdate(filter, update);
-            })
+            WilderModel.findOneAndUpdate({ "_id": wilderID}, update)
             .then(() => {
                 res.send("Le wilder a bien été modifié.")
             })
@@ -58,6 +42,17 @@ module.exports = {
 
     getAll: (req, res) => {
         WilderModel.find()
+        .then((result) => {
+            res.json(result);
+        })
+        .catch((err) => {
+            res.json(err);
+        })
+    },
+
+    getOne: (req, res) => {
+        let wilderID = req.params.wilderID;
+        WilderModel.find({ "_id": wilderID})
         .then((result) => {
             res.json(result);
         })
