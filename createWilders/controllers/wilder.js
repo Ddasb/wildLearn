@@ -57,45 +57,21 @@ module.exports = {
     },
 
     getAll: (req, res) => {
-        let datas = req.body;
-        console.log(datas);
-        if (Object.keys(datas).length > 0) {
-            WilderModel.find()
-            .where('identity.firstName')
-            .equals(datas.firstName)
-            .where('identity.name')
-            .equals(datas.name)
-            .exec()
-            .then((result) => {
-                res.json(result);
-            })
-            .catch((err) => {
-                res.json(err);
-            })
-        }
-        else {
-            res.send("La requête n'a rien trouvé.");
-        }
+        WilderModel.find()
+        .then((result) => {
+            res.json(result);
+        })
+        .catch((err) => {
+            res.json(err);
+        })
     },
 
     remove: (req, res) => {
-        let datas = req.body;
-        let dataName = datas.name;
-        let dataFirstname = datas.firstName;
-        let delData = {
-            identity: {
-                name: dataName,
-                firstName: dataFirstname
-            }
-        }
-        if (Object.keys(datas).length > 0) {
+        let wilderID = req.params.wilderID;
+        console.log(wilderID);
+        if (wilderID) {
             WilderModel
-            .deleteMany()
-            .where('identity.firstName')
-            .equals(datas.firstName)
-            .where('identity.name')
-            .equals(datas.name)
-            .exec()
+            .deleteMany({ "_id": wilderID})
             .then((result) => {
                 res.json(result);
             })

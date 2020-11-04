@@ -26,10 +26,10 @@ mongoose.connect(
 
 app.use(bodyParser.json());
 
-app.post('/api/wilder/create', wilderController.create);
-app.delete('/api/wilder/remove', wilderController.remove);
-app.patch('/api/wilder/update', wilderController.update);
-app.get('/api/wilder/getAll', wilderController.getAll);
+app.post('/api/wilders', wilderController.create);
+app.patch('/api/wilders', wilderController.update);
+app.get('/api/wilders', wilderController.getAll);
+app.delete('/api/wilders/:wilderID', wilderController.remove);
 
 app.listen(3000, error => {
     if(error){

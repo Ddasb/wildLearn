@@ -1,8 +1,14 @@
 # HTTP
-GET http://localhost:3000/api/wilder/getAll HTTP/1.1
+GET http://localhost:3000/api/wilders HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Da Silva",
-    "firstName": "Tommy"
+    "identity": {
+        "name": "Da Silva",
+        "firstName": "Tommy",
+        "age": 17
+    },
+    "skills": [
+        {"title": "Rien", "votes": 8}
+    ]
 }

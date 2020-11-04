@@ -1,12 +1,12 @@
 # HTTP
-PATCH http://localhost:3000/api/wilder/update HTTP/1.1
+PATCH http://localhost:3000/api/wilders/ HTTP/1.1
 content-type: application/json
 
 {
     "identity": {
         "name": "Da Silva",
         "firstName": "Tommy",
-        "age": 17
+        "age": 16
     },
     "skills": [
         {"title": "Rien", "votes": 8}
