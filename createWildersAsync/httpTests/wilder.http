@@ -36,7 +36,7 @@ DELETE http://localhost:3000/api/wilders/5fa1c9e12dd1513fccba20be HTTP/1.1
 
 ### Requête GetAll
 # HTTP
-GET http://localhost:3000/api/wilders HTTP/1.1
+GET http://localhost:3200/api/wilders HTTP/1.1
 
 ### Requête GetOne
 # HTTP

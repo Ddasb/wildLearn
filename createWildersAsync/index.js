@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Import des Controllers
 const wilderController = require('./controllers/wilder')
@@ -24,6 +25,7 @@ mongoose.connect(
     });
 
 app.use(bodyParser.json());
+app.use(cors());
 
 const errorHandler = (controller) => {
     return async (req, res, next) => {
@@ -56,7 +58,7 @@ app.use('*', (req, res) => {
     });
 });
 
-app.listen(3000, error => {
+app.listen(3200, error => {
     if (error) {
         console.error(error);
         return false;
