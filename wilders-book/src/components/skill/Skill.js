@@ -1,8 +1,13 @@
 import propTypes from 'prop-types';
+import { Badge } from '../../styledComponents/Badge';
+import { LiSkill } from '../../styledComponents/LiSkill';
+
 
 function skill({name, votes}) {
     return (
-    <li>{name} <span className="votes">{votes}</span></li>
+        <LiSkill>
+            {name} <Badge votes={votes}>{votes}</Badge>
+        </LiSkill>
     )
 }
 
