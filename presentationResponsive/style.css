@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    font-size: 25px;
+    padding: 0;
+    list-style: none;
+}
+
+section:nth-child(odd) {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #f76c6c;
+    color: #efefef;
+}
+
+section:nth-child(even) {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    color: #f76c6c;
+    background-color: #efefef;
+}
+
+.flex_center_column {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.flex_space_row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex_center_row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_space_column {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.understand {
+    justify-content: center;
+    align-items: center;
+}
+
+section.wcsbg {
+    background-color: #f76c6c;
+    color: #efefef;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+div.responsive_div {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+}
+
+
+div.responsive_div > div {
+    width: 50%;
+    margin-bottom: 25px;
+}
+
+div.responsive_div > div > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.responsive_div_grid {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+div.responsive_div_grid > div {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+@media (max-width:600px) {
+    div.responsive_div > div {
+        width: 100%;
+    }
+
+    div.responsive_div {
+        width: 90%;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    div.responsive_div_grid {
+        width: 90%;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+    }
+}

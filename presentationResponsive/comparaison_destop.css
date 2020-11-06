@@ -1,0 +1,17 @@
+.main{
+    background: #FFF; 
+    float: left;
+    width: 75%;
+}
+.sidebar{
+    background: #FF0000; 
+    float: left;
+    width: 25%;
+}
+
+@media (max-width: 640px){
+    .main, .sidebar{
+        float: none; 
+        width: 100%; 
+    }
+}

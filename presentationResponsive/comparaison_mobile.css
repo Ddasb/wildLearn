@@ -1,0 +1,19 @@
+.main{
+    background: #FFF; 
+}
+.sidebar{
+    background: #FF0000; 
+}
+
+@media (min-width: 640px){
+
+    .main, .sidebar{
+        float:left;
+    }
+    .main{
+        width: 75%;
+    }
+    .sidebar{
+        width: 25%
+    }
+}
