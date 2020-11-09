@@ -4,13 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 const wilder_1 = __importDefault(require("../models/wilder"));
 module.exports = {
-    create: async (req, res) => {
+    create: async (req) => {
         const datas = req.body;
         await wilder_1.default.init();
         const createWilder = new wilder_1.default(datas);
-        const result = await createWilder.save();
+        await createWilder.save();
     },
-    update: async (req, res) => {
+    update: async (req) => {
         const { wilderID } = req.params;
         const datas = req.body;
         const update = datas;

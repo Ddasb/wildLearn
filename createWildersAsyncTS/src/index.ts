@@ -19,7 +19,7 @@ mongoose
   .then(() => {
     console.log("Database connected !");
   })
-  .catch((err: any) => {
+  .catch((err: Error) => {
     console.error(err);
   });
 
