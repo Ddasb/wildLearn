@@ -1,0 +1,3 @@
+#.eslintignore
+built
+src/*/*.js
