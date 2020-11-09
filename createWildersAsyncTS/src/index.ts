@@ -1,4 +1,4 @@
-import express, { NextFunction, Request, Response } from "express";
+import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -29,7 +29,7 @@ app.use(cors());
 const errorHandler = (
   controller: (req: Request, res: Response) => Promise<void>
 ) => {
-  return async (req: Request, res: Response, next: NextFunction) => {
+  return async (req: Request, res: Response) => {
     try {
       await controller(req, res);
     } catch ({ code, message, status }) {

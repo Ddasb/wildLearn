@@ -3,14 +3,14 @@ import { Request, Response } from "express";
 import WilderModel from "../models/wilder";
 
 export = {
-  create: async (req: Request, res: Response): Promise<void> => {
+  create: async (req: Request): Promise<void> => {
     const datas = req.body;
     await WilderModel.init();
     const createWilder = new WilderModel(datas);
-    const result = await createWilder.save();
+    await createWilder.save();
   },
 
-  update: async (req: Request, res: Response): Promise<void> => {
+  update: async (req: Request): Promise<void> => {
     const { wilderID } = req.params;
     const datas = req.body;
     const update = datas;
