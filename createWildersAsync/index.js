@@ -9,20 +9,20 @@ const wilderController = require('./controllers/wilder')
 const app = express();
 
 mongoose.connect(
-        'mongodb://localhost:27017/createWilders', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useCreateIndex: true,
-            autoIndex: true,
-            useFindAndModify: false
-        }
-    )
-    .then(() => {
-        console.log("Database connected !")
-    })
-    .catch((err) => {
-        console.error(err)
-    });
+    'mongodb://localhost:27017/createWilders', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        autoIndex: true,
+        useFindAndModify: false
+    }
+)
+.then(() => {
+    console.log("Database connected !")
+})
+.catch((err) => {
+    console.error(err)
+});
 
 app.use(bodyParser.json());
 app.use(cors());

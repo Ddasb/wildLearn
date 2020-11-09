@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 import { Wilder } from "./components/wilder/Wilder"
+import { Addwilder } from "./components/addwilder/Addwilder"
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
 					<h1>Wilders Book</h1>
 				</div>
 			</header>
+			<Addwilder></Addwilder>
 			<main className="container">
 				<h2>Wilders</h2>
 				<section className="card-row">

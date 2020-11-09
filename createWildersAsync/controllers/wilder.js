@@ -1,7 +1,7 @@
 const WilderModel = require("../models/wilder");
 
 module.exports = {
-    create: async (req, res, next) => {
+    create: async (req, res) => {
         let datas = req.body;
         await WilderModel.init();
         const firstWilder = new WilderModel(datas);

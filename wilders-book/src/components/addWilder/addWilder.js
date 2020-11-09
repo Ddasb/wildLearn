@@ -1,10 +1,11 @@
 import useState from 'react';
 import axios from 'axios';
 
-export const AddWilder = () => {
+export const Addwilder = () => {
     const [name, setName] = useState("");
     const [firstName, setFirstName] = useState("");
     const [age, setAge] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const saveWilder = async () => {
         let identity = {
@@ -19,8 +20,8 @@ export const AddWilder = () => {
         console.log(response);
     }
 
-    const addWild = () => {
-        event.preventDefault;
+    const addWild = async (e) => {
+        e.preventDefault();
         saveWilder();
     }
 
