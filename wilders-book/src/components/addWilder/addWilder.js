@@ -1,11 +1,10 @@
-import useState from 'react';
+import React, { useState } from "react";
 import axios from 'axios';
 
 export const Addwilder = () => {
     const [name, setName] = useState("");
     const [firstName, setFirstName] = useState("");
     const [age, setAge] = useState("");
-    const [loading, setLoading] = useState(false);
 
     const saveWilder = async () => {
         let identity = {
@@ -15,14 +14,22 @@ export const Addwilder = () => {
                 age
             }
         }
+        console.log(identity);
 
-        const response = await axios.post('http://localhost:3200/api/wilders', identity);
+        const response = await axios.post('http://localhost:3200/api/wilders', {
+            identity: {
+                name,
+                firstName,
+                age
+            }
+        });
         console.log(response);
     }
 
     const addWild = async (e) => {
+        console.log('Test');
         e.preventDefault();
-        saveWilder();
+        saveWilder();   
     }
 
     return (

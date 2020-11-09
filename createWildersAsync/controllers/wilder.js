@@ -4,8 +4,8 @@ module.exports = {
     create: async (req, res) => {
         let datas = req.body;
         await WilderModel.init();
-        const firstWilder = new WilderModel(datas);
-        const result = await resFirstWilder.save();
+        const createWilder = new WilderModel(datas);
+        const result = await createWilder.save();
     },
 
     update: async (req, res) => {
