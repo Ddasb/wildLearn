@@ -96,7 +96,6 @@ const addCourseAuto = function(args) {
     entree.id = nextIndex;
 
     coursesData.push(entree);
-    console.log(coursesData);
     
     return coursesData;
 }
